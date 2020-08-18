@@ -102,17 +102,17 @@
     <ClCompile Include="数据结构与算法\算法\判断回文.cpp">
       <Filter>源文件\数据结构与算法\算法</Filter>
     </ClCompile>
-    <ClCompile Include="贪心思想.cpp">
-      <Filter>源文件\数据结构与算法\算法</Filter>
-    </ClCompile>
-    <ClCompile Include="搜索.cpp">
-      <Filter>源文件\数据结构与算法\算法</Filter>
-    </ClCompile>
-    <ClCompile Include="大疆笔试——最大子段和.cpp">
-      <Filter>源文件\公司笔试</Filter>
-    </ClCompile>
     <ClCompile Include="数据结构与算法\算法\分治.cpp">
       <Filter>源文件\数据结构与算法\算法</Filter>
+    </ClCompile>
+    <ClCompile Include="数据结构与算法\算法\搜索.cpp">
+      <Filter>源文件\数据结构与算法\算法</Filter>
+    </ClCompile>
+    <ClCompile Include="数据结构与算法\算法\贪心思想.cpp">
+      <Filter>源文件\数据结构与算法\算法</Filter>
+    </ClCompile>
+    <ClCompile Include="公司\大疆笔试——最大子段和.cpp">
+      <Filter>源文件\公司笔试</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
