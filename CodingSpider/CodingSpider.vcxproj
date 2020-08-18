@@ -23,7 +23,7 @@
     <ProjectGuid>{A0DE4B90-A074-421B-96F7-E32D8D2EAFD0}</ProjectGuid>
     <RootNamespace>CodingSpider</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>SpiderCoding</ProjectName>
+    <ProjectName>Coding_Notes</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -149,18 +149,24 @@
     <ClCompile Include="公司\网易\平分物品.cpp" />
     <ClCompile Include="公司\网易\最短排队时间.cpp" />
     <ClCompile Include="公司\网易\消消乐游戏.cpp" />
-    <ClCompile Include="数据结构与算法\二叉树.cpp" />
-    <ClCompile Include="数据结构与算法\动态规划.cpp" />
-    <ClCompile Include="数据结构与算法\字符串.cpp" />
-    <ClCompile Include="数据结构与算法\排序算法.cpp" />
-    <ClCompile Include="数据结构与算法\栈.cpp" />
-    <ClCompile Include="数据结构与算法\链表.cpp" />
+    <ClCompile Include="大疆笔试——最大子段和.cpp" />
+    <ClCompile Include="搜索.cpp" />
+    <ClCompile Include="数据结构与算法\数据结构\二叉树.cpp" />
+    <ClCompile Include="数据结构与算法\算法\分治.cpp" />
+    <ClCompile Include="数据结构与算法\算法\判断回文.cpp" />
+    <ClCompile Include="数据结构与算法\算法\动态规划.cpp" />
+    <ClCompile Include="数据结构与算法\数据结构\字符串.cpp" />
+    <ClCompile Include="数据结构与算法\算法\排序算法.cpp" />
+    <ClCompile Include="数据结构与算法\数据结构\栈.cpp" />
+    <ClCompile Include="数据结构与算法\算法\双指针.cpp" />
+    <ClCompile Include="数据结构与算法\数据结构\链表.cpp" />
     <ClCompile Include="设计模式\其他.cpp" />
     <ClCompile Include="设计模式\单例模式.cpp" />
     <ClCompile Include="设计模式\工厂模式.cpp">
       <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ShowIncludes>
       <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ShowIncludes>
     </ClCompile>
+    <ClCompile Include="贪心思想.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

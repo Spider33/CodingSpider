@@ -315,7 +315,7 @@ ListNode* sortList1(ListNode* head) {
 
 
 ////////////////////////////9¡¢»ØÎÄÁ´±í/////////////////////
-bool isPalindrome(ListNode* head) {
+bool isPalindromeL(ListNode* head) {
 	if (!head || !head->next)	return true;
 	ListNode* fast = head, * slow = head;
 	ListNode* p=NULL, * pre = NULL;

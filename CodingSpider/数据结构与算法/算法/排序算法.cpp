@@ -356,16 +356,7 @@ void heapSort(vector<int>& arr, int size) {
 
 }
 
-/*
-int main() {
-	vector<int> arr = { 4,6,8,5,9 };
-	heapSort(arr, arr.size());
-	for (int i = 0; i < arr.size(); i++)
-		cout << arr[i] << endl;
-	system("pause");
-	return 0;
-}
-*/
+
 
 /////////////////////////////////3、归并排序/////////////////////////////////////
 /*
@@ -442,7 +433,8 @@ int main() {
 }
 */
 
-////////////////3、前k个高频元素//////////////
+////////////////3、前k个高频元素——347//////////////
+//桶排序
 vector<int> ropKFrequent(vector<int>& nums, int k) {
 	if (nums.size() < k)	return {};
 	
@@ -535,4 +527,43 @@ ListNode* sortList(ListNode* head) {
 	}
 	pre->next = NULL;
 	return merge3(sortList(head), sortList(slow));
+}
+
+
+
+//////////根据字符出现频率降序排序////////////
+string frequencySort(string s) {
+	unordered_map<char, int> mp;
+	for (const auto& c : s) 
+		mp[c]++;
+	
+	vector<pair<char, int>> temp;
+	for (const auto& m : mp)
+		temp.push_back(m);
+	sort(temp.begin(), temp.end(), [](const pair<char, int>& a, const pair<char, int>& b) {
+		return a.second < b.second;
+		});
+
+	string res;
+	for (auto& t : temp) {
+		res += string(t.second, t.first);
+	}
+	return res;
+}
+
+
+
+/////////////////////////////////////////////////////////////////////
+////荷兰国旗问题
+
+void sortColors(vector<int>& nums) {
+	int zero = -1, one = 0, two = nums.size();
+	while (one < two) {
+		if (nums[one] == 0)
+			swap(nums[++zero], nums[one++]);
+		else if (nums[one] == 2)
+			swap(nums[--two], nums[one]);
+		else
+			one++;
+	}
 }

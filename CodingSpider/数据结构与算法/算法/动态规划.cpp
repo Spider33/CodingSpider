@@ -608,7 +608,7 @@ int longestDfs(string& s1, string& s2,int a,int b,vector<vector<int>>& dp) {
 	if (a == 0 || b == 0)	return 0;
 	if (dp[a][b] != -1)		return dp[a][b];
 
-	dp[a][b] = max(longestDfs(s1, s2,a-1,b,dp), longestDfs(s1, s2,a,b, dp));
+	dp[a][b] = max(longestDfs(s1, s2,a-1,b,dp), longestDfs(s1, s2,a,b-1, dp));
 	//动态规划
 	if (s1[a - 1] == s2[b - 1])
 		dp[a][b] = max(longestDfs(s1, s2, a - 1, b - 1, dp) + 1, dp[a][b]);
@@ -756,3 +756,125 @@ int numDecoding(string s) {
 
 
 
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////8.股票交易//////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+//8.1 买卖股票的最佳时机1——121
+/*
+最多只允许一次交易
+*/
+int maxProfit1(vector<int>& prices) {
+	int n = prices.size();
+	if (n <= 1)	return 0;
+	int buy = -prices[0], sell = 0;
+	for (int i = 1; i < n; i++) {
+		buy = max(buy, -prices[i]);
+		sell = max(sell, buy + prices[i]);
+	}
+	return sell;
+}
+
+//8.2 买卖股票的最佳时机2——122
+/*
+多次买卖，最大利润
+*/
+int maxProfit2(vector<int>& prices) {
+	int n = prices.size();
+	if (n <= 1)	return 0;
+	int buy = -prices[0], sell = 0;
+	for (int i = 1; i < n; i++) {
+		buy = max(buy, sell-prices[i]);	//多次买卖
+		sell = max(sell, buy + prices[i]);
+	}
+	return sell;
+}
+
+//8.3 买卖股票的最佳时机3——123
+/*
+最多完成两笔交易
+*/
+int maxProfit3(vector<int>& prices) {
+	int n = prices.size();
+	if (n <= 1)	return 0;
+
+	vector<int> dp(n, 0);	//dp[i]代表前i天交易最大值
+	int k = 2;
+	while (k--) {
+		for (int i = 1; i < n; i++) 
+			dp[i] = max(dp[i - 1] - prices[i - 1] + prices[i], dp[i]);	//进行一笔买卖
+		for (int i = 1; i < n; i++)
+			dp[i] = max(dp[i], dp[i - 1]);	//不进行买卖
+	}
+	return dp[n - 1];
+
+	int buy = -prices[0], sell = 0;
+	for (int i = 1; i < n; i++) {
+		buy = max(buy, sell - prices[i]);	//多次买卖
+		sell = max(sell, buy + prices[i]);
+	}
+	return sell;
+}
+
+//8.4 买卖股票的最佳时机4——188
+/*
+最多完成k笔交易
+*/
+int maxProfit4(vector<int>& prices,int k) {
+	int n = prices.size();
+	if (n <= 1)	return 0;
+
+	//超出交易次数限制情况
+	if (k >= n / 2) {
+		int res = 0;
+		for (int i = 1; i < n; i++) {
+			if (prices[i] > prices[i - 1])
+				res += prices[i] - prices[i - 1];	//贪心法求解
+		}
+		return res;
+	}
+	
+	//处理动态规划
+	vector<int> dp(n, 0);	//dp[i]代表前i天交易最大值
+	while (k--) {
+		for (int i = 1; i < n; i++)
+			dp[i] = max(dp[i - 1] - prices[i - 1] + prices[i], dp[i]);	//进行一笔买卖
+		for (int i = 1; i < n; i++)
+			dp[i] = max(dp[i], dp[i - 1]);	//不进行买卖
+	}
+	return dp[n - 1];
+}
+
+//8.5 买卖股票的最佳时机5——309
+/*
+含冷冻期，冷冻期为1天
+*/
+int maxProfit5(vector<int>& prices) {
+	int n = prices.size();
+	if (n <= 1)	return 0;
+
+	int dp_sell = 0, dp_buy = -prices[0], dp_save = 0;
+	for (int i = 1; i < n; i++) {
+		int temp = dp_sell;							//i之前卖出的情况
+		dp_sell = max(dp_sell, dp_buy + prices[i]);	//之前买进，i天卖出
+		dp_buy = max(dp_buy, dp_save - prices[i]);	//之前冷冻，i天买入
+		dp_save = temp;								//冷冻前i天的卖出情况
+	}
+	return dp_sell;
+}
+
+
+//8.6 买卖股票的最佳时机6——715
+/*
+需要交易费用
+*/
+int maxProfit6(vector<int>& prices, int fee) {
+	int n = prices.size();
+	if (n <= 1)	return 0;
+
+	int dp_sell = 0, dp_buy = -prices[0];
+	for (int i = 1; i < n; i++) {
+		dp_sell = max(dp_sell, dp_buy + prices[i]-fee);	
+		dp_buy = max(dp_buy, dp_sell - prices[i]);	
+	}
+	return dp_sell;
+}

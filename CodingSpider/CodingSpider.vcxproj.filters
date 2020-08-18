@@ -31,31 +31,22 @@
     <Filter Include="源文件\公司笔试\拼多多">
       <UniqueIdentifier>{f4929b02-3b53-49c7-a554-cca1438c03d5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\数据结构与算法\数据结构">
+      <UniqueIdentifier>{e25abcc1-666d-430a-9d74-412888d3ff16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\数据结构与算法\算法">
+      <UniqueIdentifier>{0e919f15-77ff-46a7-bd0d-2859a5864cc1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="设计模式\单例模式.cpp">
       <Filter>源文件\设计模式</Filter>
     </ClCompile>
-    <ClCompile Include="数据结构与算法\动态规划.cpp">
-      <Filter>源文件\数据结构与算法</Filter>
-    </ClCompile>
-    <ClCompile Include="数据结构与算法\二叉树.cpp">
-      <Filter>源文件\数据结构与算法</Filter>
-    </ClCompile>
     <ClCompile Include="设计模式\工厂模式.cpp">
       <Filter>源文件\设计模式</Filter>
     </ClCompile>
-    <ClCompile Include="数据结构与算法\链表.cpp">
-      <Filter>源文件\数据结构与算法</Filter>
-    </ClCompile>
-    <ClCompile Include="数据结构与算法\排序算法.cpp">
-      <Filter>源文件\数据结构与算法</Filter>
-    </ClCompile>
     <ClCompile Include="设计模式\其他.cpp">
       <Filter>源文件\设计模式</Filter>
-    </ClCompile>
-    <ClCompile Include="数据结构与算法\字符串.cpp">
-      <Filter>源文件\数据结构与算法</Filter>
     </ClCompile>
     <ClCompile Include="公司\拼多多\飞行棋.cpp">
       <Filter>源文件\公司笔试\拼多多</Filter>
@@ -87,8 +78,41 @@
     <ClCompile Include="公司\网易\老王打字.cpp">
       <Filter>源文件\公司笔试\网易</Filter>
     </ClCompile>
-    <ClCompile Include="数据结构与算法\栈.cpp">
-      <Filter>源文件\数据结构与算法</Filter>
+    <ClCompile Include="数据结构与算法\算法\动态规划.cpp">
+      <Filter>源文件\数据结构与算法\算法</Filter>
+    </ClCompile>
+    <ClCompile Include="数据结构与算法\数据结构\二叉树.cpp">
+      <Filter>源文件\数据结构与算法\数据结构</Filter>
+    </ClCompile>
+    <ClCompile Include="数据结构与算法\数据结构\链表.cpp">
+      <Filter>源文件\数据结构与算法\数据结构</Filter>
+    </ClCompile>
+    <ClCompile Include="数据结构与算法\算法\排序算法.cpp">
+      <Filter>源文件\数据结构与算法\算法</Filter>
+    </ClCompile>
+    <ClCompile Include="数据结构与算法\算法\双指针.cpp">
+      <Filter>源文件\数据结构与算法\算法</Filter>
+    </ClCompile>
+    <ClCompile Include="数据结构与算法\数据结构\栈.cpp">
+      <Filter>源文件\数据结构与算法\数据结构</Filter>
+    </ClCompile>
+    <ClCompile Include="数据结构与算法\数据结构\字符串.cpp">
+      <Filter>源文件\数据结构与算法\数据结构</Filter>
+    </ClCompile>
+    <ClCompile Include="数据结构与算法\算法\判断回文.cpp">
+      <Filter>源文件\数据结构与算法\算法</Filter>
+    </ClCompile>
+    <ClCompile Include="贪心思想.cpp">
+      <Filter>源文件\数据结构与算法\算法</Filter>
+    </ClCompile>
+    <ClCompile Include="搜索.cpp">
+      <Filter>源文件\数据结构与算法\算法</Filter>
+    </ClCompile>
+    <ClCompile Include="大疆笔试——最大子段和.cpp">
+      <Filter>源文件\公司笔试</Filter>
+    </ClCompile>
+    <ClCompile Include="数据结构与算法\算法\分治.cpp">
+      <Filter>源文件\数据结构与算法\算法</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
